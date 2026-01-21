@@ -18,7 +18,7 @@ export function Hero() {
 
         <Reveal delay={100}>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black mb-8 leading-tight">
-            Detecter. Evaluer. Corriger.
+            Détecter. Evaluer. Corriger.
           </h1>
         </Reveal>
 
@@ -28,7 +28,7 @@ export function Hero() {
               On ne digitalise pas le chaos.
             </p>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
-              On pose les bonnes questions. Vous trouvez les reponses.
+              On pose les bonnes questions. Vous trouvez les réponses.
             </p>
           </div>
         </Reveal>
@@ -36,7 +36,7 @@ export function Hero() {
         <Reveal delay={300}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button asChild size="lg" className="w-full sm:w-auto min-w-[220px]">
-              <Link href="#methode">Decouvrir notre methode</Link>
+              <Link href="#methode">Découvrir notre methode</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="w-full sm:w-auto min-w-[220px]">
               <Link href="/contact">Soumettre un dossier</Link>
