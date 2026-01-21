@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
-import { ValueProposition } from "@/components/value-proposition";
+import { Philosophy } from "@/components/philosophy";
+import { Method } from "@/components/method";
+import { Accompagnement } from "@/components/accompagnement";
+import { ServiceEquity } from "@/components/service-equity";
 import { BaikalSection } from "@/components/baikal-section";
-import { AboutFounder } from "@/components/about-founder";
-import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -11,10 +12,11 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <Hero />
-      <ValueProposition />
+      <Philosophy />
+      <Method />
+      <Accompagnement />
+      <ServiceEquity />
       <BaikalSection />
-      <AboutFounder />
-      <ContactSection />
       <Footer />
     </main>
   );

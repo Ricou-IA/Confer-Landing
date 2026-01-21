@@ -1,9 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 export function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,34 +19,25 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Navigation Links */}
+          {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center gap-8">
             <Link
-              href="#expertise"
+              href="/ressources"
               className="text-sm font-medium text-black hover:text-gray-600 transition-colors"
             >
-              Expertise
+              Ressources
             </Link>
             <Link
-              href="#baikal"
+              href="/projets"
               className="text-sm font-medium text-black hover:text-gray-600 transition-colors"
             >
-              Baïkal Technology
-            </Link>
-            <Link
-              href="#contact"
-              className="text-sm font-medium text-black hover:text-gray-600 transition-colors"
-            >
-              Contact
+              Projets
             </Link>
           </div>
 
-          {/* CTA Button */}
-          <Button
-            asChild
-            className="hidden sm:flex"
-          >
-            <Link href="#contact">Audit de reprise</Link>
+          {/* CTA Button - Desktop */}
+          <Button asChild className="hidden md:flex">
+            <Link href="/contact">Nous contacter</Link>
           </Button>
 
           {/* Mobile Menu Button */}
@@ -51,24 +46,43 @@ export function Navbar() {
             size="icon"
             className="md:hidden"
             aria-label="Menu"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-gray-200">
+            <div className="flex flex-col gap-4">
+              <Link
+                href="/ressources"
+                className="text-sm font-medium text-black hover:text-gray-600 transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Ressources
+              </Link>
+              <Link
+                href="/projets"
+                className="text-sm font-medium text-black hover:text-gray-600 transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Projets
+              </Link>
+              <Button asChild className="w-full mt-2">
+                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                  Nous contacter
+                </Link>
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
 }
-
