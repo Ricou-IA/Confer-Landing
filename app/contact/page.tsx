@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Une question ? Un projet ? Un dossier à soumettre ? Contactez Confer pour un accompagnement sur-mesure de votre PME.",
+    "Une question ? Un projet ? Un dossier a soumettre ? Contactez Confer pour un accompagnement sur-mesure de votre PME.",
   openGraph: {
     title: "Contact | Confer",
     description: "Contactez-nous pour discuter de votre projet.",
@@ -19,19 +19,16 @@ export default function ContactPage() {
       
       <section className="pt-32 pb-20 lg:pt-40 lg:pb-32 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-2xl">
-          {/* En-tête */}
           <div className="text-center mb-12">
             <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-4">
               Nous contacter
             </h1>
             <p className="text-lg text-gray-600">
-              Une question ? Un projet ? Un dossier à soumettre ?
+              Une question ? Un projet ? Un dossier a soumettre ?
             </p>
           </div>
 
-          {/* Formulaire */}
           <form className="space-y-6">
-            {/* Nom */}
             <div>
               <label 
                 htmlFor="name" 
@@ -44,12 +41,11 @@ export default function ContactPage() {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                className="relative z-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all bg-white"
                 placeholder="Votre nom"
               />
             </div>
 
-            {/* Email */}
             <div>
               <label 
                 htmlFor="email" 
@@ -62,12 +58,11 @@ export default function ContactPage() {
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                className="relative z-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all bg-white"
                 placeholder="votre@email.com"
               />
             </div>
 
-            {/* Message */}
             <div>
               <label 
                 htmlFor="message" 
@@ -80,12 +75,11 @@ export default function ContactPage() {
                 name="message"
                 rows={6}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all resize-none"
-                placeholder="Décrivez votre projet ou votre demande..."
+                className="relative z-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-all resize-none bg-white"
+                placeholder="Decrivez votre projet ou votre demande..."
               />
             </div>
 
-            {/* Bouton */}
             <button
               type="submit"
               className="w-full bg-black text-white py-4 px-6 rounded-lg font-medium hover:bg-gray-800 transition-colors"

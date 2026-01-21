@@ -11,7 +11,7 @@ export function ServiceEquity() {
         {/* Surtitre */}
         <Reveal>
           <span className="text-xs sm:text-sm uppercase tracking-widest text-gray-400 font-medium">
-            Service to Equity
+            Service for Equity
           </span>
         </Reveal>
 
