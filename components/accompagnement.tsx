@@ -39,8 +39,8 @@ export function Accompagnement() {
           {missions.map((mission, index) => {
             const Icon = mission.icon;
             return (
-              <Reveal key={index} delay={index * 150}>
-                <div className="group p-8 lg:p-10 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300">
+              <Reveal key={index} delay={index * 150} className="h-full">
+                <div className="group p-8 lg:p-10 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300 h-full flex flex-col">
                   {/* Icône */}
                   <div className="mb-6 inline-flex items-center justify-center w-14 h-14 bg-black rounded-full">
                     <Icon className="h-7 w-7 text-white" strokeWidth={1.5} />
@@ -57,7 +57,7 @@ export function Accompagnement() {
                   </p>
 
                   {/* Description */}
-                  <p className="text-gray-500">
+                  <p className="text-gray-500 mt-auto">
                     {mission.description}
                   </p>
                 </div>

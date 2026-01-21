@@ -8,14 +8,14 @@ export function Method() {
     {
       icon: Search,
       title: "Détecter",
-      description: "Audit terrain, immersion dans vos équipes.",
-      detail: "On pose les questions que personne n'ose poser.",
+      description: "Audit opérationnel, comprendre votre façon de faire.",
+      detail: "On pose les questions, on détecte les blocages.",
     },
     {
       icon: BarChart3,
       title: "Évaluer",
-      description: "Priorisation des chantiers, feuille de route chiffrée.",
-      detail: "Ce qui coûte le plus, on le traite en premier.",
+      description: "Priorisation des chantiers, feuille de route claire.",
+      detail: "Ce qui pèse le plus, on le traite en premier.",
     },
     {
       icon: Wrench,
@@ -45,8 +45,8 @@ export function Method() {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <Reveal key={index} delay={index * 150}>
-                <div className="group relative p-8 bg-white border border-gray-200 rounded-lg hover:border-black transition-all duration-300">
+              <Reveal key={index} delay={index * 150} className="h-full">
+                <div className="group relative p-8 bg-white border border-gray-200 rounded-lg hover:border-black transition-all duration-300 h-full flex flex-col">
                   {/* Numéro en fond */}
                   <span className="absolute top-4 right-4 text-6xl font-serif font-bold text-gray-100 group-hover:text-gray-200 transition-colors">
                     {index + 1}
@@ -68,7 +68,7 @@ export function Method() {
                   </p>
 
                   {/* Détail */}
-                  <p className="relative z-10 text-sm text-gray-500 italic">
+                  <p className="relative z-10 text-sm text-gray-500 italic mt-auto">
                     {step.detail}
                   </p>
                 </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { StructuredData } from "@/components/structured-data";
+import { Watermark } from "@/components/watermark";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,6 +75,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <StructuredData />
+        <Watermark />
         {children}
       </body>
     </html>

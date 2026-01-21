@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -13,7 +14,14 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/logo-watermark.svg"
+              alt="Confer Logo"
+              width={32}
+              height={32}
+              className="h-8 w-8 lg:h-10 lg:w-10"
+            />
             <span className="font-serif text-2xl lg:text-3xl font-bold text-black">
               Confer
             </span>

@@ -23,9 +23,9 @@ export function Philosophy() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {mantras.map((mantra, index) => (
-            <Reveal key={index} delay={index * 100}>
-              <div className="flex items-start gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
-                <span className="text-3xl font-serif font-bold text-gray-300">
+            <Reveal key={index} delay={index * 100} className="h-full">
+              <div className="flex items-start gap-4 p-6 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow h-full min-h-[120px]">
+                <span className="text-3xl font-serif font-bold text-gray-300 shrink-0">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <p className="text-lg sm:text-xl font-medium text-black leading-snug pt-1">
