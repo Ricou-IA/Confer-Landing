@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Une question ? Un projet ? Un dossier à soumettre ? Contactez Confer pour un accompagnement sur-mesure de votre PME.",
+  openGraph: {
+    title: "Contact | Confer",
+    description: "Contactez-nous pour discuter de votre projet.",
+  },
+};
 
 export default function ContactPage() {
   return (

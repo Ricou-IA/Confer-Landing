@@ -1,6 +1,17 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Ressources",
+  description:
+    "Réflexions sur l'organisation, les process et la transformation des PME. Articles et conseils pour dirigeants.",
+  openGraph: {
+    title: "Ressources | Confer",
+    description: "Articles et conseils pour dirigeants de PME.",
+  },
+};
 
 // Données temporaires (à remplacer par un CMS ou des fichiers MDX)
 const articles = [

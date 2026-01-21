@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Projets",
+  description:
+    "Découvrez nos missions d'accompagnement PME : restructuration, digitalisation, optimisation des process.",
+  openGraph: {
+    title: "Projets | Confer",
+    description: "Nos missions d'accompagnement en cours et réalisées.",
+  },
+};
 
 // Données temporaires (à remplacer par un CMS ou base de données)
 const projets = [
