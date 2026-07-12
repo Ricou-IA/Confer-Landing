@@ -1,39 +1,110 @@
 import type { Metadata } from "next";
+import {
+  ArrowUpRight,
+  Coffee,
+  Croissant,
+  Droplets,
+  FileText,
+  Flame,
+  HardHat,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Projets",
   description:
-    "Découvrez nos missions d'accompagnement PME : restructuration, digitalisation, optimisation des process.",
+    "Nos réalisations pour les PME et artisans : SaaS métier, sites vitrines, automatisation et pilotage. Pré-état daté, autorisation de voirie, Mayer Énergie, et plus.",
   openGraph: {
     title: "Projets | Confer",
-    description: "Nos missions d'accompagnement en cours et réalisées.",
+    description:
+      "Produits et sites que nous avons conçus et livrés pour les PME et artisans.",
   },
 };
 
-// Données temporaires (à remplacer par un CMS ou base de données)
-const projets = [
+type Projet = {
+  slug: string;
+  title: string;
+  status: "Réalisé" | "En cours";
+  sector: string;
+  description: string;
+  icon: LucideIcon;
+  /** Site public en ligne — lien suivi (dofollow) vers la réalisation. */
+  href?: string;
+  hrefLabel?: string;
+};
+
+const projets: Projet[] = [
   {
-    slug: "restructuration-pme-industrielle",
-    title: "Restructuration PME industrielle",
-    status: "En cours",
-    sector: "Industrie",
-    description: "Audit des process de production et réorganisation des flux logistiques.",
-  },
-  {
-    slug: "digitalisation-cabinet-comptable",
-    title: "Digitalisation cabinet comptable",
+    slug: "pre-etat-date",
+    title: "Pré-état daté automatisé",
     status: "Réalisé",
-    sector: "Services",
-    description: "Mise en place d'une architecture de données et automatisation des tâches répétitives.",
+    sector: "Immobilier · SaaS",
+    description:
+      "SaaS qui génère le pré-état daté (loi Alur) pour la vente en copropriété à partir des documents du vendeur, grâce à l'analyse IA. Livraison par lien notaire.",
+    icon: FileText,
+    href: "https://www.pre-etat-date.ai",
+    hrefLabel: "pre-etat-date.ai",
   },
   {
-    slug: "optimisation-service-client",
-    title: "Optimisation service client",
-    status: "En cours",
-    sector: "Commerce",
-    description: "Refonte des process de traitement des demandes et formation des équipes.",
+    slug: "autorisation-voirie",
+    title: "Demande d'occupation de voirie",
+    status: "Réalisé",
+    sector: "Artisans · Micro-SaaS",
+    description:
+      "Micro-SaaS mobile qui permet aux artisans de générer et d'envoyer leur demande d'occupation du domaine public (Cerfa) à la mairie en moins de deux minutes.",
+    icon: HardHat,
+    href: "https://www.autorisation-voirie.fr",
+    hrefLabel: "autorisation-voirie.fr",
+  },
+  {
+    slug: "mayer-energie",
+    title: "Mayer Énergie — site & leads",
+    status: "Réalisé",
+    sector: "Énergie",
+    description:
+      "Site vitrine, génération de leads et espace client pour un installateur de chauffage et fournisseur de pellets. Automatisation des relances et de la reprise de contact.",
+    icon: Flame,
+    href: "https://www.mayer-energie.fr",
+    hrefLabel: "mayer-energie.fr",
+  },
+  {
+    slug: "majordhome",
+    title: "Majord'home — plateforme métier",
+    status: "Réalisé",
+    sector: "BTP · SaaS",
+    description:
+      "Plateforme SaaS pour les artisans du bâtiment (CVC) : CRM, planning, pipeline commercial, carte territoire et outil terrain sur tablette.",
+    icon: Wrench,
+  },
+  {
+    slug: "cosette-boulangerie",
+    title: "Cockpit financier — Boulangerie",
+    status: "Réalisé",
+    sector: "Artisanat · Commerce",
+    description:
+      "Tableau de bord mensuel qui réconcilie les flux d'espèces et pilote les marges (coût matière, personnel) d'une boulangerie artisanale.",
+    icon: Croissant,
+  },
+  {
+    slug: "croco-lavage",
+    title: "Croco Lavage — station de lavage",
+    status: "Réalisé",
+    sector: "Commerce local",
+    description:
+      "Site vitrine et contenu SEO pour une station de lavage auto en libre-service, ouverte 24h/24 près de Toulouse.",
+    icon: Droplets,
+  },
+  {
+    slug: "da-rivens",
+    title: "DA Rivens — distribution automatique",
+    status: "Réalisé",
+    sector: "Distribution",
+    description:
+      "Site vitrine pour une entreprise familiale de distributeurs automatiques de boissons et confiseries en Occitanie.",
+    icon: Coffee,
   },
 ];
 
@@ -53,44 +124,66 @@ export default function ProjetsPage() {
               Projets
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Quelques exemples de missions en cours ou réalisées.
+              Un aperçu des produits, sites et outils que nous avons conçus et
+              livrés pour des PME et des artisans.
             </p>
           </div>
 
           {/* Grille des projets */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projets.map((projet) => (
-              <article
-                key={projet.slug}
-                className="group p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-all duration-300"
-              >
-                {/* Status badge */}
-                <div className="flex items-center justify-between mb-4">
+            {projets.map((projet) => {
+              const Icon = projet.icon;
+              return (
+                <article
+                  key={projet.slug}
+                  className="group flex flex-col p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg hover:border-gray-300 transition-all duration-300"
+                >
+                  {/* Icône + statut */}
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-700 group-hover:bg-gray-900 group-hover:text-white transition-colors duration-300">
+                      <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    </span>
+                    <span
+                      className={`text-xs font-medium px-2 py-1 rounded ${
+                        projet.status === "En cours"
+                          ? "bg-green-100 text-green-700"
+                          : "bg-gray-100 text-gray-600"
+                      }`}
+                    >
+                      {projet.status}
+                    </span>
+                  </div>
+
+                  {/* Secteur */}
                   <span className="text-xs font-medium uppercase tracking-wide text-gray-500">
                     {projet.sector}
                   </span>
-                  <span
-                    className={`text-xs font-medium px-2 py-1 rounded ${
-                      projet.status === "En cours"
-                        ? "bg-green-100 text-green-700"
-                        : "bg-gray-100 text-gray-600"
-                    }`}
-                  >
-                    {projet.status}
-                  </span>
-                </div>
 
-                {/* Titre */}
-                <h2 className="font-serif text-lg font-bold text-black mb-3">
-                  {projet.title}
-                </h2>
+                  {/* Titre */}
+                  <h2 className="font-serif text-lg font-bold text-black mt-1 mb-3">
+                    {projet.title}
+                  </h2>
 
-                {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {projet.description}
-                </p>
-              </article>
-            ))}
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {projet.description}
+                  </p>
+
+                  {/* Lien vers le site (dofollow) */}
+                  {projet.href && (
+                    <a
+                      href={projet.href}
+                      target="_blank"
+                      rel="noopener"
+                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-black hover:text-gray-600 transition-colors"
+                    >
+                      {projet.hrefLabel ?? "Voir le site"}
+                      <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
+                    </a>
+                  )}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
