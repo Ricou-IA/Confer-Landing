@@ -64,6 +64,7 @@ const projets: Projet[] = [
     icon: HardHat,
     href: "https://www.autorisation-voirie.fr",
     hrefLabel: "autorisation-voirie.fr",
+    caseStudy: "/projets/autorisation-voirie",
   },
   {
     slug: "mayer-energie",
@@ -75,6 +76,7 @@ const projets: Projet[] = [
     icon: Flame,
     href: "https://www.mayer-energie.fr",
     hrefLabel: "mayer-energie.fr",
+    caseStudy: "/projets/mayer-energie",
   },
   {
     slug: "arpet",
