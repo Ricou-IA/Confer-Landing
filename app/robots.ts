@@ -7,6 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://confer.fr/sitemap.xml",
+    sitemap: "https://www.confer-sas.fr/sitemap.xml",
+    host: "https://www.confer-sas.fr",
   };
 }

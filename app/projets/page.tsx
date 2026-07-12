@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   ArrowUpRight,
+  Bot,
   Coffee,
   Croissant,
   Droplets,
@@ -17,6 +19,7 @@ export const metadata: Metadata = {
   title: "Projets",
   description:
     "Nos réalisations pour les PME et artisans : SaaS métier, sites vitrines, automatisation et pilotage. Pré-état daté, autorisation de voirie, Mayer Énergie, et plus.",
+  alternates: { canonical: "/projets" },
   openGraph: {
     title: "Projets | Confer",
     description:
@@ -34,6 +37,8 @@ type Projet = {
   /** Site public en ligne — lien suivi (dofollow) vers la réalisation. */
   href?: string;
   hrefLabel?: string;
+  /** Étude de cas interne détaillée. */
+  caseStudy?: string;
 };
 
 const projets: Projet[] = [
@@ -47,6 +52,7 @@ const projets: Projet[] = [
     icon: FileText,
     href: "https://www.pre-etat-date.ai",
     hrefLabel: "pre-etat-date.ai",
+    caseStudy: "/projets/pre-etat-date",
   },
   {
     slug: "autorisation-voirie",
@@ -69,6 +75,18 @@ const projets: Projet[] = [
     icon: Flame,
     href: "https://www.mayer-energie.fr",
     hrefLabel: "mayer-energie.fr",
+  },
+  {
+    slug: "arpet",
+    title: "ARPET — assistant IA pour le BTP",
+    status: "Réalisé",
+    sector: "BTP · IA / SaaS",
+    description:
+      "Assistant IA pour conducteurs de travaux : il cherche les réponses dans vos CCTP, DTU et réglementations, et automatise les comptes-rendus de réunion. Incubé au CSTB'Lab.",
+    icon: Bot,
+    href: "https://www.arpet.ai",
+    hrefLabel: "arpet.ai",
+    caseStudy: "/projets/arpet",
   },
   {
     slug: "majordhome",
@@ -169,17 +187,30 @@ export default function ProjetsPage() {
                     {projet.description}
                   </p>
 
-                  {/* Lien vers le site (dofollow) */}
-                  {projet.href && (
-                    <a
-                      href={projet.href}
-                      target="_blank"
-                      rel="noopener"
-                      className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-black hover:text-gray-600 transition-colors"
-                    >
-                      {projet.hrefLabel ?? "Voir le site"}
-                      <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
-                    </a>
+                  {/* Liens : étude de cas (interne) + site (dofollow) */}
+                  {(projet.href || projet.caseStudy) && (
+                    <div className="mt-5 flex flex-col gap-2">
+                      {projet.caseStudy && (
+                        <Link
+                          href={projet.caseStudy}
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-black hover:text-gray-600 transition-colors"
+                        >
+                          Lire l&apos;étude de cas
+                          <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
+                        </Link>
+                      )}
+                      {projet.href && (
+                        <a
+                          href={projet.href}
+                          target="_blank"
+                          rel="noopener"
+                          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-black transition-colors"
+                        >
+                          {projet.hrefLabel ?? "Voir le site"}
+                          <ArrowUpRight className="h-4 w-4" strokeWidth={2} />
+                        </a>
+                      )}
+                    </div>
                   )}
                 </article>
               );

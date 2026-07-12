@@ -5,9 +5,9 @@ export function StructuredData() {
       name: "Confer",
       description:
         "Partenaire opérationnel des PME. Détecter. Évaluer. Corriger. Audit, structuration des process et accompagnement des dirigeants.",
-      url: "https://confer.fr",
-      logo: "https://confer.fr/logo.png",
-      sameAs: [],
+      url: "https://www.confer-sas.fr",
+      logo: "https://www.confer-sas.fr/logo-watermark.svg",
+      sameAs: ["https://www.linkedin.com/company/111069364/"],
       address: {
         "@type": "PostalAddress",
         addressCountry: "FR",

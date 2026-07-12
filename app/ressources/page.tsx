@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Ressources",
   description:
     "Réflexions sur l'organisation, les process et la transformation des PME. Articles et conseils pour dirigeants.",
+  alternates: { canonical: "/ressources" },
   openGraph: {
     title: "Ressources | Confer",
     description: "Articles et conseils pour dirigeants de PME.",

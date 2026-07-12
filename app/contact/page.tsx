@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Une question ? Un projet ? Un dossier a soumettre ? Contactez Confer pour un accompagnement sur-mesure de votre PME.",
+  alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact | Confer",
     description: "Contactez-nous pour discuter de votre projet.",

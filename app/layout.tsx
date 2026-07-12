@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://confer.fr"),
+  metadataBase: new URL("https://www.confer-sas.fr"),
   title: {
     default: "Confer — Partenaire opérationnel des PME",
     template: "%s | Confer",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://confer.fr",
+    url: "https://www.confer-sas.fr",
     siteName: "Confer",
     title: "Confer — Partenaire opérationnel des PME",
     description:
