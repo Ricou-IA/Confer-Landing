@@ -3,12 +3,17 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   Bot,
+  Calculator,
+  ClipboardCheck,
   Coffee,
   Croissant,
   Droplets,
   FileText,
   Flame,
+  Gauge,
   HardHat,
+  LayoutDashboard,
+  Sun,
   Wrench,
   type LucideIcon,
 } from "lucide-react";
@@ -89,6 +94,57 @@ const projets: Projet[] = [
     href: "https://www.arpet.ai",
     hrefLabel: "arpet.ai",
     caseStudy: "/projets/arpet",
+  },
+  {
+    slug: "baikal",
+    title: "Baikal — back-office des SaaS",
+    status: "Réalisé",
+    sector: "SaaS · Data / Pilotage",
+    description:
+      "Le back-office des SaaS de Confer : il lit Postgres, Stripe et la Search Console de chaque site et les réunit dans une console unique (clients, finances, SEO, prospects).",
+    icon: LayoutDashboard,
+    href: "https://withbaikal.io",
+    hrefLabel: "withbaikal.io",
+  },
+  {
+    slug: "monsieurdpe",
+    title: "MonsieurDPE — data énergétique",
+    status: "Réalisé",
+    sector: "Immobilier · Énergie / Data",
+    description:
+      "Outils autour du diagnostic de performance énergétique (DPE), bâtis sur les bases ADEME — 17,4 M de DPE et 883 000 audits interrogés en direct.",
+    icon: Gauge,
+    href: "https://monsieurdpe.fr",
+    hrefLabel: "monsieurdpe.fr",
+  },
+  {
+    slug: "conseil-solaire",
+    title: "Conseil Solaire — leads photovoltaïque",
+    status: "Réalisé",
+    sector: "Solaire · Leads",
+    description:
+      "Site national qui capte des demandes de particuliers pour le photovoltaïque, les qualifie par le calcul, et les transmet à des installateurs.",
+    icon: Sun,
+    href: "https://conseil-solaire.fr",
+    hrefLabel: "conseil-solaire.fr",
+  },
+  {
+    slug: "hesiasun",
+    title: "HésiaSun — étude photovoltaïque",
+    status: "Réalisé",
+    sector: "Solaire · SaaS",
+    description:
+      "Logiciel de dimensionnement solaire pour installateurs : une adresse et une facture d'électricité en entrée, une étude de rentabilité chiffrée en quelques minutes.",
+    icon: Calculator,
+  },
+  {
+    slug: "duerp",
+    title: "DUERP — document unique",
+    status: "Réalisé",
+    sector: "RH · Conformité / SaaS",
+    description:
+      "SaaS qui aide les TPE à produire leur Document Unique d'Évaluation des Risques Professionnels, à le maintenir à jour et à le conserver pendant 40 ans.",
+    icon: ClipboardCheck,
   },
   {
     slug: "majordhome",
