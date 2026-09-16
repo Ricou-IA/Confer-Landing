@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { articles } from "./articles";
 
 export const metadata: Metadata = {
   title: "Ressources",
@@ -13,31 +14,6 @@ export const metadata: Metadata = {
     description: "Articles et conseils pour dirigeants de PME.",
   },
 };
-
-// Données temporaires (à remplacer par un CMS ou des fichiers MDX)
-const articles = [
-  {
-    slug: "pourquoi-process-avant-outils",
-    title: "Pourquoi vos process doivent précéder vos outils",
-    excerpt: "Trop d'entreprises investissent dans des logiciels avant d'avoir clarifié leurs méthodes de travail. Résultat : du chaos digitalisé.",
-    date: "2025-01-15",
-    category: "Process",
-  },
-  {
-    slug: "questions-audit-pme",
-    title: "Les 10 questions qu'on pose lors d'un audit PME",
-    excerpt: "Un aperçu de notre méthode de diagnostic : les questions inconfortables qui révèlent les vrais blocages.",
-    date: "2025-01-08",
-    category: "Méthode",
-  },
-  {
-    slug: "simplifier-avant-automatiser",
-    title: "Simplifier avant d'automatiser : la règle d'or",
-    excerpt: "Automatiser un process bancal, c'est multiplier les erreurs plus vite. Voici comment éviter ce piège.",
-    date: "2024-12-20",
-    category: "Organisation",
-  },
-];
 
 function formatDate(dateString: string) {
   const date = new Date(dateString);

@@ -1,7 +1,15 @@
 import { MetadataRoute } from "next";
+import { articles } from "./ressources/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.confer-sas.fr";
+
+  const articleRoutes: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${baseUrl}/ressources/${a.slug}`,
+    lastModified: new Date(a.date),
+    changeFrequency: "yearly",
+    priority: 0.5,
+  }));
 
   return [
     {
@@ -52,5 +60,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    ...articleRoutes,
   ];
 }
